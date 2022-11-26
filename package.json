@@ -21,7 +21,9 @@
     "url": "https://github.com/bunker99con/projectlion-bnb-chain/issues"
   },
   "homepage": "https://github.com/bunker99con/projectlion-bnb-chain#readme",
-  "dependencies": {},
+  "dependencies": {
+    "simple-boot-http-server": "^1.0.13"
+  },
   "workspaces": [
     "server",
     "front"
