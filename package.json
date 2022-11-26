@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node test.ts",
+    "start": "npm run front:build && npm run serve",
     "serve": "npm run start -w server",
     "serve:watch": "npm run start:watch -w server",
     "front:build": "npm run build -w front",
@@ -21,15 +21,7 @@
     "url": "https://github.com/bunker99con/projectlion-bnb-chain/issues"
   },
   "homepage": "https://github.com/bunker99con/projectlion-bnb-chain#readme",
-  "devDependencies": {
-  },
-  "dependencies": {
-    "ts-node": "^10.9.1",
-    "ts-node-dev": "^2.0.0",
-    "tsconfig-paths": "^4.1.0",
-    "typescript": "^4.3.5",
-    "simple-boot-http-server": "^1.0.13"
-  },
+  "dependencies": {},
   "workspaces": [
     "server",
     "front"
