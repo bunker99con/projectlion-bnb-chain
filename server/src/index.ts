@@ -75,10 +75,10 @@ export class AppRouter {
     //     return {name: 'visualkhh222'}
     // }
     //
-    // @Route({path: ['/w', '/z']}) @GET({res: {contentType: Mimes.ApplicationJson}})
-    // index2(rr: RequestResponse, header: ReqHeader, routerModule: RouterModule) {
-    //     return {name: 'visualkh99h' + rr.reqUrl}
-    // }
+    @Route({path: ['/w', '/z']}) @GET({res: {contentType: Mimes.ApplicationJson}})
+    index2(rr: RequestResponse, header: ReqHeader, routerModule: RouterModule) {
+        return {name: 'visualkh99h' + rr.reqUrl}
+    }
 }
 
 
