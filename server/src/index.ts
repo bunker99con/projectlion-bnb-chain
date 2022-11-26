@@ -92,6 +92,7 @@ const httpServerOption = new HttpServerOption({
     },
     filters: [resourceFilter],
     listen: {
+        port: Number(process.env.PORT) || 8080,
         listeningListener: (server, httpServer) => {
             console.log('server on', httpServer.address());
         }
