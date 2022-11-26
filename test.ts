@@ -35,6 +35,7 @@ const httpServerOption = new HttpServerOption({
     },
     filters: [resourceFilter],
     listen: {
+        hostname: '0.0.0.0',
         port: Number(process.env.PORT) || 8080,
         listeningListener: (server, httpServer) => {
             console.log('server on', httpServer.address());
