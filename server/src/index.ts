@@ -1,27 +1,32 @@
-import {ResourceResorver} from 'simple-boot-http-server/resolvers/ResourceResorver';
-import {Inject} from 'simple-boot-core/decorators/inject/Inject';
+import path from 'path'
 import {HttpServerOption} from 'simple-boot-http-server/option/HttpServerOption';
 import {RouterModule} from 'simple-boot-core/route/RouterModule';
-import {GET, POST, UrlMappingSituationType} from 'simple-boot-http-server/decorators/MethodMapping';
+import {GET} from 'simple-boot-http-server/decorators/MethodMapping';
 import {Route, Router} from 'simple-boot-core/decorators/route/Router';
 import {RequestResponse} from 'simple-boot-http-server/models/RequestResponse';
 import {Mimes} from 'simple-boot-http-server/codes/Mimes';
 import {SimpleBootHttpServer} from 'simple-boot-http-server';
 import {Sim} from 'simple-boot-core/decorators/SimDecorator';
 import {ReqHeader} from 'simple-boot-http-server/models/datas/ReqHeader';
-import {Intent} from 'simple-boot-core/intent/Intent';
-import path from 'path'
 import {ResourceFilter} from 'simple-boot-http-server/filters/ResourceFilter';
 import {Resource} from 'simple-boot-http-server/models/datas/Resource';
+import {DB} from '../db/db';
+
 const frontDist = path.join(require.resolve('front'), '../', 'dist');
 
 @Sim @Router({path: ''})
 export class AppRouter {
-    @Route({path: '/'}) @GET
+
+    constructor(private db: DB) {
+        console.log('---', db)
+    }
+
+    @GET @Route({path: '/'})
     index(rr: RequestResponse, header: ReqHeader, routerModule: RouterModule) {
-        const resource = new Resource( 'index.html', path.join(frontDist));
+        const resource = new Resource('index.html', path.join(frontDist));
         return resource.write(rr);
     }
+
     // @Route({path: '/'}) @GET({resolver: ResourceResorver})
     // gdata(rr: RequestResponse, header: ReqHeader, routerModule: RouterModule) {
     //     return 'index.html'
