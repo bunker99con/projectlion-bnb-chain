@@ -3,11 +3,12 @@ import { Sim } from 'simple-boot-core/decorators/SimDecorator';
 import template from './home.html';
 import style from './home.css';
 import {ConcatScript} from '../../scripts/concat.script';
-@Sim
+@Sim({
+    using: [ConcatScript]
+})
 @Component({
     template,
-    styles: [style],
-    using: [ConcatScript]
+    styles: [style]
 })
 export class Home {
     name = 'home';
