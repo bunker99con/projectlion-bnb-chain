@@ -33,6 +33,6 @@ export default {
         nodeResolve(),
         commonjs(),
         typescript({ tsconfig: './tsconfig.json'}),
-        del({ targets: ['dist/*'] })
+        del({ targets: ['dist/*.js','dist/*.html'] })
     ]
 };

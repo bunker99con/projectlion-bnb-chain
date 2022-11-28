@@ -18,3 +18,11 @@ declare module '*.js' {
     const content: any
     export default content
 }
+interface Window {
+    ethereum: any;
+}
+// declare global {
+//     interface Window {
+//         ethereum: any;
+//     }
+// }
