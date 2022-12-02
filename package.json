@@ -24,6 +24,7 @@
   "dependencies": {},
   "workspaces": [
     "server",
-    "front"
+    "front",
+    "test"
   ]
 }

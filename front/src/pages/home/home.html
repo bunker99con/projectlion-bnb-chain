@@ -1,10 +1,156 @@
-<div>
-    <h3>${this.name}$</h3>
-    <div>${$scripts.concat('hello', 'world')}$</div>
-    <button dr-if="this.toggle">
-        test
-    </button>
 
-    <button dr-event-click="this.toggle = !this.toggle">toggle</button>
-    <div class="good">aaaaa</div>
+
+<div>
+    <h1 class="text-base font-semibold leading-7 text-indigo-600">Quiz-log</h1>
+    <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">Today
+        Rankings <span class="text-blue-500">Top 10</span> USER.</h1>
+    <p class="text-lg font-normal text-gray-500 lg:text-xl ">Here at Quiz-log we focus on markets where technology,
+        innovation, and capital can unlock long-term value and drive economic growth.</p>
+    <div class="container relative w-full flex gap-6 snap-x overflow-x-auto pb-5 mt-10 overflow-x-auto">
+        <div class="snap-center shrink-0">
+            <div class="shrink-0 w-4 sm:w-48"></div>
+        </div>
+        <div dr-for-of="this.profiles" class="snap-center shrink-0 first:pl-8 last:pr-8">
+            <div router-link="/profile/2" class="cursor-pointer flex flex-col items-center  border rounded-lg shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 border-gray-700 bg-gray-800 hover:bg-gray-700">
+                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="${this.avatarService.randomAvatarUrl()}$" alt="">
+                <div class="flex flex-col justify-between p-4 leading-normal">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">${#it#.login.username}$</h5>
+                    <p class="mb-3 font-normal text-gray-400">#${#it#.login.uuid}$</p>
+                    <div class="flex flex-row items-center justify-end">
+                        <button type="button" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">profile</button>
+                        <img src="https://www.clipartmax.com/png/full/4-44076_irish-clipart-gold-coin-gold-coins-st-patricks-day.png" class="w-10 h-10 m-1">
+                        <div class="text-white">
+                            ${#it#.registered.age}$
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="snap-center shrink-0">
+            <div class="shrink-0 w-4 sm:w-48"></div>
+        </div>
+    </div>
+
+
+    <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl mt-10">Today
+        Rankings <span class="text-blue-500">Season</span> USER.</h1>
+    <div class="flex flex-row justify-around">
+        <div class="w-full max-w-md p-4 border rounded-lg shadow-md sm:p-8 bg-gray-800 border-gray-700">
+            <div class="flex items-center justify-between mb-4">
+                <h5 class="text-xl font-bold leading-none text-white">Ranker 1~10</h5>
+                <a href="#" class="text-sm font-medium hover:underline text-blue-500">
+                    View all
+                </a>
+            </div>
+            <div class="flow-root">
+                <ul role="list" class="divide-y divide-gray-700">
+                    <li dr-for-of="this.profiles"  class="py-3 sm:py-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="flex-shrink-0">
+                                <img class="w-8 h-8 rounded-full" src="${this.avatarService.randomAvatarUrl()}$" alt="Neil image">
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-sm font-medium  truncate text-white">
+                                    ${#it#.name.first}$
+                                </p>
+                                <p class="text-sm truncate text-gray-400">
+                                    #${#it#.login.md5}$
+                                </p>
+                            </div>
+                            <div class="inline-flex items-center text-base font-semibold text-white">
+
+                                <img src="https://www.clipartmax.com/png/full/4-44076_irish-clipart-gold-coin-gold-coins-st-patricks-day.png" class="w-4 h-4 m-1">
+                                ${#it#.registered.age}$
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="w-full max-w-md p-4 border rounded-lg shadow-md sm:p-8 bg-gray-800 border-gray-700">
+            <div class="flex items-center justify-between mb-4">
+                <h5 class="text-xl font-bold leading-none text-white">Ranker 11~20</h5>
+                <a href="#" class="text-sm font-medium hover:underline text-blue-500">
+                    View all
+                </a>
+            </div>
+            <div class="flow-root">
+                <ul role="list" class="divide-y divide-gray-700">
+                    <li dr-for-of="this.profiles"  class="py-3 sm:py-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="flex-shrink-0">
+                                <img class="w-8 h-8 rounded-full" src="${this.avatarService.randomAvatarUrl()}$" alt="Neil image">
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-sm font-medium  truncate text-white">
+                                    ${#it#.name.first}$
+                                </p>
+                                <p class="text-sm truncate text-gray-400">
+                                    #${#it#.login.md5}$
+                                </p>
+                            </div>
+                            <div class="inline-flex items-center text-base font-semibold text-white">
+
+                                <img src="https://www.clipartmax.com/png/full/4-44076_irish-clipart-gold-coin-gold-coins-st-patricks-day.png" class="w-4 h-4 m-1">
+                                ${#it#.registered.age}$
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-10 relative mx-auto grid max-w-[40rem] grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3">
+        <div class="flex">
+            <div class="p-0.5">
+                <svg class="h-10 w-10 shrink-0 transform-cpu rounded-lg shadow-md shadow-indigo-500/[.12]"
+                     viewBox="0 0 40 40" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M.75 8A7.25 7.25 0 018 .75h24A7.25 7.25 0 0139.25 8v24A7.25 7.25 0 0132 39.25H8A7.25 7.25 0 01.75 32V8z"
+                          class="fill-indigo-50 stroke-indigo-500"></path>
+                    <path d="M27 25.335L30.25 27l-6.603 3.382a8 8 0 01-7.294 0L9.75 27 13 25.335m14-6.999L30.25 20l-6.603 3.382a8 8 0 01-7.294 0L9.75 20 13 18.336"
+                          class="stroke-indigo-500/50"></path>
+                    <path d="M9.75 13l9.338-4.783a2 2 0 011.824 0L30.25 13l-6.603 3.382a8 8 0 01-7.294 0L9.75 13z"
+                          class="stroke-indigo-500"></path>
+                </svg>
+            </div>
+            <div class="ml-6"><h2 class="text-sm font-semibold leading-6 text-slate-900">Quiz-log?</h2>
+                <p class="mt-2 text-sm leading-6 text-slate-700">일상을 살아가며 짬나는 시간에 암호화폐 및 블록체인 관련 퀴즈를 풀면
+                    포인트를 얻고, 얻은 포인트를 통해 NFT를 구매하거나, 현금화 하는 Q2E</p></div>
+        </div>
+        <div class="flex">
+            <div class="p-0.5">
+                <svg class="h-10 w-10 shrink-0 transform-cpu rounded-lg shadow-md shadow-indigo-500/[.12]"
+                     viewBox="0 0 40 40" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M.75 8A7.25 7.25 0 018 .75h24A7.25 7.25 0 0139.25 8v24A7.25 7.25 0 0132 39.25H8A7.25 7.25 0 01.75 32V8z"
+                          class="fill-indigo-50 stroke-indigo-500"></path>
+                    <path d="M22.25 11.75l-4.5 16.5" class="stroke-indigo-500/50"></path>
+                    <path d="M16.25 7.75h-.5a4 4 0 00-4 4v4.007a3 3 0 01-.88 2.122 3 3 0 000 4.242 3 3 0 01.88 2.122v4.007a4 4 0 004 4h.5m7.5-24.5h.5a4 4 0 014 4v4.007a3.002 3.002 0 00.878 2.122 3 3 0 010 4.242 3 3 0 00-.878 2.122v4.007a4 4 0 01-4 4h-.5"
+                          class="stroke-indigo-500"></path>
+                </svg>
+            </div>
+            <div class="ml-6"><h2 class="text-sm font-semibold leading-6 text-slate-900">Goals</h2>
+                <p class="mt-2 text-sm leading-6 text-slate-700">퀴즈라는 매체를 통해 효율적으로 블록체인 및 암호화폐 지식을 쌓으며
+                    궁극적으로 시장 전체에 활동적인 유저 증가를 목표로 함.</p></div>
+        </div>
+        <div class="flex">
+            <div class="p-0.5">
+                <svg class="h-10 w-10 shrink-0 transform-cpu rounded-lg shadow-md shadow-indigo-500/[.12]"
+                     viewBox="0 0 40 40" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M.75 8A7.25 7.25 0 018 .75h24A7.25 7.25 0 0139.25 8v24A7.25 7.25 0 0132 39.25H8A7.25 7.25 0 01.75 32V8z"
+                          class="fill-indigo-50 stroke-indigo-500"></path>
+                    <path d="M7.75 21.25v-1.5a4 4 0 014-4h7.5m5 5v7.5a4 4 0 01-4 4h-1.5M27.75 32.25h.5a4 4 0 004-4v-10.5m-10-10h-10.5a4 4 0 00-4 4v.5"
+                          class="stroke-indigo-500/50"></path>
+                    <path d="M31.5 8.5l-23 23" class="stroke-indigo-500"></path>
+                    <path d="M25.75 7.75h4.5a2 2 0 012 2v4.5m-18 18h-4.5a2 2 0 01-2-2v-4.5"
+                          class="stroke-indigo-500"></path>
+                </svg>
+            </div>
+            <div class="ml-6"><h2 class="text-sm font-semibold leading-6 text-slate-900">Why? X2E</h2>
+                <p class="mt-2 text-sm leading-6 text-slate-700">앱테크의 가장 큰 단점인 출금의 제약인 최소 출금 금액과 기프티콘과 같은
+                    현금화 방식을 제약없는 출금정책을 통해 해결하고자 함.</p></div>
+        </div>
+    </div>
 </div>
